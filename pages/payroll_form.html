@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/payroll_form.css">
     <title>Employee payroll form</title>
     <script defer src="../js/payroll_form.js"></script>
+    <script defer src="../js/payrollModel.js"></script>
 </head>
 
 <body>
@@ -23,12 +24,13 @@
     </header>
 
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save(event);return false">
+        <form class="form" action="#" onsubmit="save(event)">
             <!-- UC 2 -->
             <div class="form-head"> Employee Payroll form </div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Your name.." required>
+                <error-output id="name-error" for="name"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="profile">Profile image</label>
@@ -90,7 +92,7 @@
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date</label>
                 <div>
-                    <select id="day" name="Day">
+                    <select id="day" name="Day" required>
                         <option>Day</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -146,7 +148,21 @@
                         <option value="2018">2018</option>
                         <option value="2017">2017</option>
                         <option value="2016">2016</option>
+                        <option value="2015">2016</option>
+                        <option value="2014">2016</option>
                     </select>
+                </div>
+            </div>
+            <!-- UC 6-->
+            <div class="row-content">
+                <label class="label text" for="notes">Notes</label>
+                <textarea id="notes" class="input" name="Notes" placeholder="" style="height: 100px;"></textarea>
+            </div>
+            <div class="buttonParent">
+                <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
+                <div class="submit-reset">
+                    <button type="submit" class="submitButton button" id="submitButton">Submit</button>
+                    <button type="reset" class="resetButton button">Reset</button>
                 </div>
             </div>
         </form>
