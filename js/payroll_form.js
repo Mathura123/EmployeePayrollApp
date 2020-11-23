@@ -26,6 +26,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
 function save(){
     try{    
         let empPayrollData = createEmployeePayroll();
+        createAndUpdateStorage(empPayrollData);
     }
     catch(e)
     {
@@ -33,7 +34,6 @@ function save(){
         return;
     }
 }
-let empPayroll = [];
 function createEmployeePayroll()
 {
     let employeepayrollData = new PayrollModel();
@@ -45,9 +45,8 @@ function createEmployeePayroll()
     employeepayrollData.note = getInputValueById('#notes');
     let date = getInputValueById('#year') + "-"+ getInputValueById('#month') + "/" + getInputValueById('#day');
     employeepayrollData.startDate = new Date(date);
-    empPayroll.push(employeepayrollData)
     alert("Your entry is successfully done");
-    alert(empPayroll);
+    alert(employeepayrollData.toString());
     return employeepayrollData;
 }
 function getSelectedValues(attribute)
@@ -67,4 +66,17 @@ function getInputValueById(id){
 function getElementValueById(id){
     let value = document.getElementById(id).value
     return value;
+}
+function createAndUpdateStorage(employeepayrollData){
+    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    if(employeePayrollList != undefined)
+    {
+        employeePayrollList.push(employeepayrollData);
+    }
+    else
+    {
+        employeePayrollList = [employeepayrollData];
+    }
+    alert("Added Object to the local Storage" + employeePayrollList.toString());
+    localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
 }
