@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded',(event) => {
 });
 function save(){
     try{    
-        createEmployeePayroll();
+        let empPayrollData = createEmployeePayroll();
     }
     catch(e)
     {
@@ -48,6 +48,7 @@ function createEmployeePayroll()
     empPayroll.push(employeepayrollData)
     alert("Your entry is successfully done");
     alert(empPayroll);
+    return employeepayrollData;
 }
 function getSelectedValues(attribute)
 {
