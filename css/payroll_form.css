@@ -170,9 +170,10 @@ select {
     text-decoration: none;
     text-align: center;
 }
-#name-error{
-    color: #435260;
+error-output{
+    color: #fc0808;
     font-family: Roboto;
+    font-style: italic;
 }
 
 @media only screen and (max-width:960px) {

@@ -48,7 +48,7 @@ class PayrollModel {
         }
     }
     get note() {
-        return this._notes;
+        return this._note;
     }
     set note(note) {
         this._note = note;

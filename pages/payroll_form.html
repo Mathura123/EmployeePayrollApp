@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/payroll_form.css">
+    <link rel="shortcut icon" href="../assets/images/logo.png">
     <title>Employee payroll form</title>
     <script defer src="../js/payroll_form.js"></script>
     <script defer src="../js/payrollModel.js"></script>
@@ -24,7 +25,7 @@
     </header>
 
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save(event)">
+        <form class="form" action="#" onsubmit="save()" onreset="resetForm()">
             <!-- UC 2 -->
             <div class="form-head"> Employee Payroll form </div>
             <div class="row-content">
@@ -92,7 +93,7 @@
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date</label>
                 <div>
-                    <select id="day" name="Day" required>
+                    <select id="startDate" class="day" name="Day" required>
                         <option>Day</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -126,7 +127,7 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                    <select id="month" name="Month">
+                    <select id="startDate" class="month" name="Month">
                         <option>Month</option>
                         <option value=1>January</option>
                         <option value=2>February</option>
@@ -141,7 +142,7 @@
                         <option value=11>November</option>
                         <option value=12>December</option>
                     </select>
-                    <select id="year" name="Year">
+                    <select id="startDate" class="year" name="Year">
                         <option>Year</option>
                         <option value="2020">2020</option>
                         <option value="2019">2019</option>
@@ -152,11 +153,12 @@
                         <option value="2014">2014</option>
                     </select>
                 </div>
+                <error-output id= "date-error" for ="startDate"></error-output>
             </div>
             <!-- UC 6-->
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
-                <textarea id="notes" class="input" name="Notes" placeholder="" style="height: 100px;"></textarea>
+                <textarea id="note" class="input" name="Notes" placeholder="" style="height: 100px;"></textarea>
             </div>
             <div class="buttonParent">
                 <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
