@@ -17,6 +17,10 @@ body {
     align-items: center;
     border: 0px solid green;
 }
+.linkHome{
+    display: inline-block;
+    text-decoration: none;
+}
 
 .logo-content {
     display: flex;

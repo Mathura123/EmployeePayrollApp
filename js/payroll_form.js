@@ -110,7 +110,13 @@ function getElementValueById(id){
     return value;
 }
 function createAndUpdateStorage(employeepayrollData){
+    let empPayrollId = JSON.parse(localStorage.getItem("EmployeePayrollIdIterator"));
     let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    if(empPayrollId == null)
+    {
+        empPayrollId =1;
+    }
+    employeepayrollData['_id']=empPayrollId;
     if(employeePayrollList != undefined)
     {
         employeePayrollList.push(employeepayrollData);
@@ -119,7 +125,9 @@ function createAndUpdateStorage(employeepayrollData){
     {
         employeePayrollList = [employeepayrollData];
     }
+    empPayrollId+=1;
     alert("Added Object to the local Storage" + employeePayrollList.toString());
+    localStorage.setItem("EmployeePayrollIdIterator",empPayrollId);
     localStorage.setItem("EmployeePayrollList",JSON.stringify(employeePayrollList));
 }
 const resetForm = () => {
