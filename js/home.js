@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     employeePayrollList = getEmployeePayrollDataFromStorage();
     document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();
+    localStorage.removeItem('editEmp')
 });
 const getEmployeePayrollDataFromStorage = () => {
     return localStorage.getItem('EmployeePayrollList') ? JSON.parse(localStorage.getItem('EmployeePayrollList')) : [];
@@ -72,3 +73,9 @@ remove = function(node){
     alert("User deleted is : "+empPayrollData._name+" with id :"+empPayrollData._id);
     createInnerHtml();
 }
+update = function(node){
+    let empData = employeePayrollList.find((emp) => emp._id == node.id);
+    if (!empData) return;
+    localStorage.setItem("editEmp", JSON.stringify(empData));
+    window.location.replace(site_properties.employee_payroll_page);
+}; 
