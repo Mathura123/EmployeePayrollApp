@@ -46,9 +46,7 @@ class PayrollModel {
     }
     set startDate(startDate) {
         if (startDate <= new Date())
-            this._startDate = startDate.toLocaleString(undefined, {
-                timeZone: 'Asia/Kolkata'
-            });
+            this._startDate = stringifyDate(startDate);
         else {
             throw "Invalid Start Date";
         }

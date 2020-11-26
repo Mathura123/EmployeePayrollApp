@@ -84,7 +84,7 @@ function updateEmployeePayroll() {
     employeePayrollObj._salary = getInputValueById('#salary');
     employeePayrollObj._note = getInputValueById('#note');
     let date = getInputValueById('.year') + "-" + getInputValueById('.month') + "-" + getInputValueById('.day');
-    employeePayrollObj._startDate = new Date(date);
+    employeePayrollObj._startDate = stringifyDate(date);
     alert("Your entry is successfully done");
     return employeePayrollObj;
 }
@@ -99,9 +99,8 @@ function createEmployeePayroll() {
     employeepayrollData._salary = getInputValueById('#salary');
     employeepayrollData._note = getInputValueById('#note');
     let date = getInputValueById('.year') + "-" + getInputValueById('.month') + "-" + getInputValueById('.day');
-    employeepayrollData.startDate = new Date(date);
+    employeepayrollData._startDate = stringifyDate(date);
     alert("Your entry is successfully done");
-    alert(employeepayrollData.toString());
     return employeepayrollData;
 }
 
@@ -143,7 +142,7 @@ function createAndUpdateStorage(employeepayrollData) {
         } else {
             employeePayrollList = [employeepayrollData];
         }
-        alert("Added Object to the local Storage" + employeePayrollList.toString());
+        alert("Added Entry is \n" + employeepayrollData.toString());
 
     } else {
         employeePayrollList = employeePayrollList.filter((emp) => emp._id != employeepayrollData._id);
@@ -159,8 +158,8 @@ const setForm = () => {
     setValue('#salary', employeePayrollObj._salary);
     setTextValue('.salary-output', employeePayrollObj._salary);
     setValue('#note', employeePayrollObj._note);
-    let date = stringifyDate(employeePayrollObj._startDate).split('/');
-    setValue('.day', date[0])
+    let date = employeePayrollObj._startDate.split('/');
+    setValue('.day', parseInt(date[0]))
     setValue('.month', parseInt(date[1]))
     setValue('.year', date[2]);
 }
