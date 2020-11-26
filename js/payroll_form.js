@@ -1,5 +1,4 @@
 let isUpdate = false;
-let updateBool = false;
 let employeePayrollObj = {};
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
@@ -58,18 +57,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
     checkForUpdate();
 });
 
-function save() {
+function save(event) {
+    event.preventDefault();
+    event.stopPropagation();
     try {
         let empPayrollData;
         if (!isUpdate) {
             empPayrollData = createEmployeePayroll();
-        createAndUpdateStorage(empPayrollData);
-    } else {
+            createAndUpdateStorage(empPayrollData);
+        } else {
             empPayrollData = updateEmployeePayroll();
-        createAndUpdateStorage(empPayrollData);
-        updateBool=true;
-            window.location.replace(site_properties.home_page);
-    }
+            createAndUpdateStorage(empPayrollData);
+            window.location = site_properties.home_page;
+        }
     } catch (e) {
         alert(e);
         return;

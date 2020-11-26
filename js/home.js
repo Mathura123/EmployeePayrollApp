@@ -10,7 +10,10 @@ const getEmployeePayrollDataFromStorage = () => {
 }
 const createInnerHtml = () => {
     const headerHtml = "<tr><th></th><th>Name</th><th>Gender</th><th>Department</th><th>Salary</th><th>Start Date</th><th>Actions</th></tr>"
-    if (employeePayrollList.length == 0) return;
+    if (employeePayrollList.length == 0){
+        document.querySelector('#display').innerHTML = '';
+        return;
+    }
     let innerHtml = `${headerHtml}`;
     for (const employeePayrollData of employeePayrollList) {
         innerHtml = `${innerHtml}
