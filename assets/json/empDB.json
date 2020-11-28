@@ -1,0 +1,55 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "_name": "Mathura",
+      "_gender": "Male",
+      "_department": [
+        "Engineering"
+      ],
+      "_salary": "500000",
+      "_startDate": "08/09/2020",
+      "_profile": "/assets/profile-images/Ellipse -3.png",
+      "_note": "Great Emp"
+    },
+    {
+      "id": 2,
+      "_name": "Devendra",
+      "_gender": "Male",
+      "_department": [
+        "Finance",
+        "Sales"
+      ],
+      "_salary": "450000",
+      "_startDate": "20/10/2020",
+      "_profile": "/assets/profile-images/Ellipse -3.png",
+      "_note": "Hello..."
+    },
+    {
+      "id": 3,
+      "_name": "Shweta",
+      "_gender": "Female",
+      "_department": [
+        "HR",
+        "Sales"
+      ],
+      "_salary": "400000",
+      "_startDate": "20/10/2019",
+      "_profile": "/assets/profile-images/Ellipse -2.png",
+      "_note": "Hello..."
+    },
+    {
+      "_name": "Shruti",
+      "_gender": "Female",
+      "_department": [
+        "HR",
+        "Sales"
+      ],
+      "_salary": "350000",
+      "_startDate": "20/10/2020",
+      "_profile": "/assets/profile-images/Ellipse -2.png",
+      "_note": "Hello...",
+      "id": 4
+    }
+  ]
+}
