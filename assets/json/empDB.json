@@ -50,6 +50,19 @@
       "_profile": "/assets/profile-images/Ellipse -2.png",
       "_note": "Hello...",
       "id": 4
+    },
+    {
+      "_name": "Ditvi",
+      "_gender": "Female",
+      "_department": [
+        "HR",
+        "Sales"
+      ],
+      "_salary": "350000",
+      "_startDate": "20/10/2020",
+      "_profile": "/assets/profile-images/Ellipse -2.png",
+      "_note": "Hello...",
+      "id": 5
     }
   ]
 }
